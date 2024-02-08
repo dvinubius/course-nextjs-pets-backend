@@ -39,6 +39,13 @@ app.get('/api/v1/pet', async (req, res) => {
   res.json({data: pets});
 });
 
+app.get('/api/v1/pet/:name', async (req, res) => {
+  await new Promise(resolve => setTimeout(resolve, 1500));
+  const name = req.params.name;
+  const pet = pets.find(pet => pet.name === name);
+  res.json({data: pet});
+});
+
 app.post('/api/v1/pet', async (req, res) => {
   await new Promise(resolve => setTimeout(resolve, 1500));
   const newPet = req.body;

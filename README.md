@@ -19,6 +19,21 @@ returns JSON of the form
 }
 ```
 
+### Get single pet
+`GET http://localhost:5000/api/v1/pet/:name`
+
+returns JSON of the form 
+
+```
+{
+  data: 
+    {
+      name: string,
+      description: string   
+    }  
+}
+```
+
 ### Add a pet
 
 `POST http://localhost:5000/api/v1/pet`
